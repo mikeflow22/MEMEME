@@ -13,11 +13,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var photoImage: UIImageView!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
+    @IBOutlet weak var cameraButtonProperties: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         topTextField.delegate = self
         bottomTextField.delegate = self
+        cameraButtonProperties.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
     }
 
     @IBAction func shareButttonTapped(_ sender: UIBarButtonItem) {
@@ -30,10 +32,18 @@ class ViewController: UIViewController {
     
     @IBAction func cameraButtonTapped(_ sender: UIBarButtonItem) {
         //check to see if device has camera - if not disable button
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            //REFACTOR
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .camera
+            imagePicker.allowsEditing = false
+            present(imagePicker, animated: true)
+        }
     }
     
     @IBAction func albumButtonTapped(_ sender: UIBarButtonItem) {
-        //open up photoLibrary
+        //open up photoLibrary -REFACTOR
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary

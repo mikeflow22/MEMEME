@@ -89,6 +89,7 @@
                     </view>
                     <connections>
                         <outlet property="bottomTextField" destination="RSk-VW-CMb" id="Psw-8Q-IAN"/>
+                        <outlet property="cameraButtonProperties" destination="Xp8-LY-TPc" id="aNt-fi-Kej"/>
                         <outlet property="photoImage" destination="vHR-vv-4do" id="ejZ-f1-kFu"/>
                         <outlet property="topTextField" destination="rqG-CP-fOA" id="y83-BD-5FV"/>
                     </connections>
