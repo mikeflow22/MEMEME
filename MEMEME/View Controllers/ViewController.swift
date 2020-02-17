@@ -28,6 +28,9 @@ class ViewController: UIViewController {
     
     @IBAction func cancelMemeButtonTapped(_ sender: UIBarButtonItem) {
         //clear everything
+        photoImage.image = nil
+        topTextField.text = "TOP"
+        bottomTextField.text = "BOTTOM"
     }
     
     @IBAction func cameraButtonTapped(_ sender: UIBarButtonItem) {
