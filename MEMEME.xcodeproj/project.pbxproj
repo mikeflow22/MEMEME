@@ -56,15 +56,55 @@
 		1B3BA87623FB168D005C888B /* MEMEME */ = {
 			isa = PBXGroup;
 			children = (
+				1B3BA88C23FB1785005C888B /* Storyboard */,
+				1B3BA88B23FB177E005C888B /* View Controllers */,
+				1B3BA88F23FB17A2005C888B /* Model Controller */,
+				1B3BA88E23FB179D005C888B /* Model */,
+				1B3BA88D23FB1792005C888B /* Resources */,
+			);
+			path = MEMEME;
+			sourceTree = "<group>";
+		};
+		1B3BA88B23FB177E005C888B /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1B3BA87B23FB168D005C888B /* ViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		1B3BA88C23FB1785005C888B /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				1B3BA87D23FB168D005C888B /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		1B3BA88D23FB1792005C888B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				1B3BA87723FB168D005C888B /* AppDelegate.swift */,
 				1B3BA87923FB168D005C888B /* SceneDelegate.swift */,
-				1B3BA87B23FB168D005C888B /* ViewController.swift */,
-				1B3BA87D23FB168D005C888B /* Main.storyboard */,
 				1B3BA88023FB168E005C888B /* Assets.xcassets */,
 				1B3BA88223FB168E005C888B /* LaunchScreen.storyboard */,
 				1B3BA88523FB168E005C888B /* Info.plist */,
 			);
-			path = MEMEME;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1B3BA88E23FB179D005C888B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1B3BA88F23FB17A2005C888B /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
