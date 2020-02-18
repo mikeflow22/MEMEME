@@ -62,5 +62,9 @@
 	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>Would like to access your camera to take pictures to make into memes!</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Would like to access your photo library to save to your  memes!</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Would like to access your photo library to save to your  memes!</string>
 </dict>
 </plist>

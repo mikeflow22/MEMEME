@@ -89,9 +89,12 @@
                     </view>
                     <connections>
                         <outlet property="bottomTextField" destination="RSk-VW-CMb" id="Psw-8Q-IAN"/>
+                        <outlet property="bottomToolbar" destination="sxA-9C-hcg" id="VZk-DR-k2V"/>
                         <outlet property="cameraButtonProperties" destination="Xp8-LY-TPc" id="aNt-fi-Kej"/>
                         <outlet property="photoImage" destination="vHR-vv-4do" id="ejZ-f1-kFu"/>
+                        <outlet property="shareButtonProperties" destination="sAh-TK-4oD" id="pUO-mI-f2g"/>
                         <outlet property="topTextField" destination="rqG-CP-fOA" id="y83-BD-5FV"/>
+                        <outlet property="topToolbar" destination="jSJ-wu-oID" id="ygg-pl-AbV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
