@@ -28,6 +28,19 @@ class MemeViewController: UIViewController {
         }
     }
     
+      override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+            //Subscribe to the keyboard notifications, to allow the view to raise when necessary
+            subscribeToKeyboardNotifications()
+            subscribeToKeyboardWillHideNotifications()
+        }
+
+        override func viewWillDisappear(_ animated: Bool) {
+            super.viewWillDisappear(animated)
+            unsubscribeFromKeyboardNotification()
+            unsubscribeFromKeyboardWillHideNotification()
+        }
+    
     func setup(textField: UITextField, defaultText: String){
         textField.delegate = self
         textField.text = defaultText.capitalized
@@ -165,18 +178,18 @@ class MemeViewController: UIViewController {
 extension MemeViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        unsubscribeFromKeyboardNotification()
-        unsubscribeFromKeyboardWillHideNotification()
+//        unsubscribeFromKeyboardNotification()
+//        unsubscribeFromKeyboardWillHideNotification()
         return true
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.text = ""
         print("BottomTextField.text: \(textField.text)")
-        if textField == bottomTextField {
-            subscribeToKeyboardNotifications()
-            subscribeToKeyboardWillHideNotifications()
-        }
+//        if textField == bottomTextField {
+//            subscribeToKeyboardNotifications()
+//            subscribeToKeyboardWillHideNotifications()
+//        }
     }
 }
 
