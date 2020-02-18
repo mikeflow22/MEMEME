@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MemeViewController: UIViewController {
     
     @IBOutlet weak var photoImage: UIImageView!
     @IBOutlet weak var topTextField: UITextField!
@@ -154,7 +154,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITextFieldDelegate {
+extension MemeViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         unsubscribeFromKeyboardNotification()
@@ -172,7 +172,7 @@ extension ViewController: UITextFieldDelegate {
     }
 }
 
-extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+extension MemeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let choosenImage = info[.originalImage] as? UIImage else {
             print("Error in file: \(#file), in the body of the function: \(#function) on line: \(#line)\n")
