@@ -33,10 +33,14 @@ class MemeViewController: UIViewController {
         textField.text = defaultText.capitalized
     }
     
+    func hideToolbars(_ hide: Bool){
+        topToolbar.isHidden = hide
+        bottomToolbar.isHidden = hide
+    }
     func createMemeImage()-> UIImage {
          //hide other views
-         topToolbar.isHidden = true
-         bottomToolbar.isHidden = true
+         hideToolbars(true)
+        
          //take "screen shot of screen"
          UIGraphicsBeginImageContext(view.frame.size)
          view.layer.render(in: UIGraphicsGetCurrentContext()!)
@@ -48,8 +52,8 @@ class MemeViewController: UIViewController {
      func resetView(){
          cameraButtonProperties.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
          photoImage.image = nil
-         topTextField.text = "TOP"
-         bottomTextField.text = "BOTTOM"
+         setup(textField: topTextField, defaultText: "TOP")
+        setup(textField: bottomTextField, defaultText: "BOTTTOM")
          if photoImage.image == nil {
              shareButtonProperties.isEnabled = false
          }
