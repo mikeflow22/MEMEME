@@ -20,14 +20,17 @@ class MemeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        topTextField.delegate = self
-        bottomTextField.delegate = self
-        topTextField.text = "TOP"
-        bottomTextField.text = "BOTTOM"
+        setup(textField: topTextField, defaultText: "TOP")
+        setup(textField: bottomTextField, defaultText: "BOTTTOM")
         cameraButtonProperties.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         if photoImage.image == nil {
             shareButtonProperties.isEnabled = false
         }
+    }
+    
+    func setup(textField: UITextField, defaultText: String){
+        textField.delegate = self
+        textField.text = defaultText.capitalized
     }
     
     func createMemeImage()-> UIImage {
