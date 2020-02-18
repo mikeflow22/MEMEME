@@ -60,9 +60,8 @@ class MemeViewController: UIViewController {
      }
      
      func saveMeme(topText: String, bottomText: String, originalImage: UIImage, memeImage: UIImage){
-         MemeController.createMeme(withTopText: topText, bottomText: bottomText, andMemeImage: memeImage, originalImage: originalImage)
-         topToolbar.isHidden = false
-         bottomToolbar.isHidden = false
+        let _ = Meme(memeImage: memeImage, orginalImage: originalImage, topText: topText, bottomText: bottomText)
+        hideToolbars(false)
          resetView()
      }
      
@@ -75,12 +74,14 @@ class MemeViewController: UIViewController {
      
      @objc func keyboardWillShow(_ notification: Notification){
          //slide the view up to make room for the keyboard
-         view.frame.origin.y -= getKeyboardHeight(notification)
+        if bottomTextField.isEditing{
+            view.frame.origin.y -= getKeyboardHeight(notification)
+        }
      }
      
      @objc func keyboardWillHide(_ notification: Notification){
          //slide the view up to make room for the keyboard
-         view.frame.origin.y += getKeyboardHeight(notification)
+         view.frame.origin.y = 0
      }
      
      func subscribeToKeyboardNotifications(){
