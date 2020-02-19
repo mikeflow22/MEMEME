@@ -9,6 +9,18 @@
 import UIKit
 
 class MemeCollectionViewCell: UICollectionViewCell {
-    
+    var meme: Meme? {
+        didSet {
+            updateViews()
+        }
+    }
     @IBOutlet weak var memeImageView: UIImageView!
+    
+    private func updateViews(){
+        guard let passedInMeme = meme else {
+            print("Error in file: \(#file), in the body of the function: \(#function) on line: \(#line)\n")
+            return
+        }
+        memeImageView.image = passedInMeme.memeImage
+    }
 }
