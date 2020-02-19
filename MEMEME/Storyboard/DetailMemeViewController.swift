@@ -9,24 +9,28 @@
 import UIKit
 
 class DetailMemeViewController: UIViewController {
-
+    
+    var meme: Meme? {
+        didSet {
+            updateImage()
+        }
+    }
+    
     @IBOutlet weak var memeImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        updateImage()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //make this reusable
+    func updateImage(){
+        guard let passedInMeme = meme, isViewLoaded else {
+            print("Error in file: \(#file), in the body of the function: \(#function) on line: \(#line)\n")
+            return
+        }
+        memeImageView.image = passedInMeme.memeImage
     }
-    */
+
 
 }

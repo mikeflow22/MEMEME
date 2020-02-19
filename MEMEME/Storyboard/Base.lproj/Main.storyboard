@@ -71,7 +71,7 @@
                                 <connections>
                                     <outlet property="memeImageView" destination="yMH-l7-6nR" id="PiH-4e-rz0"/>
                                     <outlet property="topTextField" destination="ulT-t2-rxd" id="F8y-LW-Oze"/>
-                                    <segue destination="yiG-ha-AeX" kind="show" id="rRi-13-1Vn"/>
+                                    <segue destination="yiG-ha-AeX" kind="show" identifier="toDetail" id="rRi-13-1Vn"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -132,6 +132,9 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="49" height="53"/>
+                                <connections>
+                                    <segue destination="yiG-ha-AeX" kind="show" identifier="toDetail" id="j8s-lO-Sgf"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -297,6 +300,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="j8s-lO-Sgf"/>
         <segue reference="xej-3v-wYE"/>
     </inferredMetricsTieBreakers>
 </document>
