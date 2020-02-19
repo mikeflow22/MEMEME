@@ -11,6 +11,7 @@ import UIKit
 class SentMemesTableViewController: UITableViewController {
 
     let memeController = MemeController.shared
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -23,8 +24,9 @@ class SentMemesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "memeCell", for: indexPath)
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "memeCell", for: indexPath) as! MemeCellTableViewCell
+        let memeToPassToCell = memeController.memes[indexPath.row]
+        cell.meme = memeToPassToCell
         return cell
     }
 

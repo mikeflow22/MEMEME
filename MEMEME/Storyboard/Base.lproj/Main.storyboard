@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-1503" y="103"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Sent Memes-->
         <scene sceneID="ciu-CP-Ltd">
             <objects>
                 <tableViewController id="2kN-Lp-fAW" customClass="SentMemesTableViewController" customModule="MEMEME" customModuleProvider="target" sceneMemberID="viewController">
@@ -71,6 +71,7 @@
                                 <connections>
                                     <outlet property="memeImageView" destination="yMH-l7-6nR" id="PiH-4e-rz0"/>
                                     <outlet property="topTextField" destination="ulT-t2-rxd" id="F8y-LW-Oze"/>
+                                    <segue destination="yiG-ha-AeX" kind="show" id="rRi-13-1Vn"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -79,7 +80,7 @@
                             <outlet property="delegate" destination="2kN-Lp-fAW" id="eZe-of-gEF"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="zwe-ow-5aO">
+                    <navigationItem key="navigationItem" title="Sent Memes" id="zwe-ow-5aO">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ebr-ch-Y8b">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="show" id="y48-mZ-ndh"/>
@@ -108,7 +109,7 @@
             </objects>
             <point key="canvasLocation" x="-666" y="-286"/>
         </scene>
-        <!--Meme Collection View Controller-->
+        <!--Sent Memes-->
         <scene sceneID="KRI-W1-eSJ">
             <objects>
                 <collectionViewController id="z1s-NX-1BZ" customClass="MemeCollectionViewController" customModule="MEMEME" customModuleProvider="target" sceneMemberID="viewController">
@@ -138,7 +139,7 @@
                             <outlet property="delegate" destination="z1s-NX-1BZ" id="RDi-pg-l56"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="O5Z-zU-Wgy">
+                    <navigationItem key="navigationItem" title="Sent Memes" id="O5Z-zU-Wgy">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="hig-Gd-vlN">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="show" id="xej-3v-wYE"/>
@@ -244,6 +245,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1242" y="102"/>
+        </scene>
+        <!--Detail Meme View Controller-->
+        <scene sceneID="RNG-sl-RPK">
+            <objects>
+                <viewController id="yiG-ha-AeX" customClass="DetailMemeViewController" customModule="MEMEME" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aBy-yg-og9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yd1-8k-c75">
+                                <rect key="frame" x="52" y="178.5" width="310.5" height="544"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="yd1-8k-c75" firstAttribute="width" secondItem="WO0-Jf-kTg" secondAttribute="width" multiplier="0.75" id="0BC-BZ-GuG"/>
+                            <constraint firstItem="yd1-8k-c75" firstAttribute="centerX" secondItem="WO0-Jf-kTg" secondAttribute="centerX" id="Dak-Fr-dXG"/>
+                            <constraint firstItem="yd1-8k-c75" firstAttribute="centerY" secondItem="WO0-Jf-kTg" secondAttribute="centerY" id="e6g-sW-RvT"/>
+                            <constraint firstItem="yd1-8k-c75" firstAttribute="height" secondItem="WO0-Jf-kTg" secondAttribute="height" multiplier="0.75" id="jxV-Uw-xDj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WO0-Jf-kTg"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="A09-OH-gEd"/>
+                    <connections>
+                        <outlet property="memeImageView" destination="yd1-8k-c75" id="DWh-1M-RQO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ANl-vo-EDB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1297" y="966"/>
         </scene>
         <!--CollectionView-->
         <scene sceneID="A24-SO-FdF">
