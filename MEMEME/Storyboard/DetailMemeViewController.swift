@@ -22,6 +22,16 @@ class DetailMemeViewController: UIViewController {
         super.viewDidLoad()
         updateImage()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+
+    }
     
     //make this reusable
     func updateImage(){

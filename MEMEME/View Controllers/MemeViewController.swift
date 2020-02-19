@@ -33,12 +33,15 @@ class MemeViewController: UIViewController {
         //Subscribe to the keyboard notifications, to allow the view to raise when necessary
         subscribeToKeyboardNotifications()
         subscribeToKeyboardWillHideNotifications()
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         unsubscribeFromKeyboardNotification()
         unsubscribeFromKeyboardWillHideNotification()
+        self.navigationController?.navigationBar.isHidden = false
+
     }
     
     func setup(textField: UITextField, defaultText: String){
@@ -154,6 +157,7 @@ class MemeViewController: UIViewController {
     @IBAction func cancelMemeButtonTapped(_ sender: UIBarButtonItem) {
         //clear everything
         resetView()
+       self.navigationController?.popToRootViewController(animated: true)
     }
     
     func openImagePicker(_ type: UIImagePickerController.SourceType){
