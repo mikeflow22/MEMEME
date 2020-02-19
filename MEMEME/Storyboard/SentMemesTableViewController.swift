@@ -41,14 +41,20 @@ class SentMemesTableViewController: UITableViewController {
         }    
     }
     */
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toDetail"{
+            guard let destinationVC = segue.destination as? DetailMemeViewController, let indexPath = tableView.indexPathForSelectedRow else {
+                print("Error in file: \(#file), in the body of the function: \(#function) on line: \(#line)\n")
+                return
+            }
+            let memeToPass = memeController.memes[indexPath.row]
+            destinationVC.meme = memeToPass
+        }
     }
-    */
+ 
 
 }

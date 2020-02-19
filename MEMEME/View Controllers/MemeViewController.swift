@@ -73,7 +73,7 @@ class MemeViewController: UIViewController {
     }
     
     func saveMeme(topText: String, bottomText: String, originalImage: UIImage, memeImage: UIImage){
-        let _ = Meme(memeImage: memeImage, orginalImage: originalImage, topText: topText, bottomText: bottomText)
+        let _ = MemeController.shared.createMeme(with: memeImage, originalImage: originalImage, topText: topText, bottomText: bottomText)
         hideToolbars(false)
         resetView()
     }
