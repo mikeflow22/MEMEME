@@ -141,6 +141,9 @@ class MemeViewController: UIViewController {
                 print("Success in file: \(#file), in the body of the function: \(#function) on line: \(#line)\n")
                 //save meme
                 self.saveMeme(topText: top, bottomText: bottom, originalImage: originalImage, memeImage: memeImage)
+                DispatchQueue.main.async {
+                    self.navigationController?.popToRootViewController(animated: true)
+                }
             } else {
                 print("Error in file: \(#file), in the body of the function: \(#function) on line: \(#line)\n")
                 return
