@@ -25,6 +25,11 @@ class MemeCollectionViewController: UICollectionViewController {
         collectionViewFlowLayout.itemSize = CGSize(width: dimension, height: dimension)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.collectionView.reloadData()
+    }
+    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
